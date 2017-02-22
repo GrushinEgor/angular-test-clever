@@ -1,0 +1,19 @@
+{
+  "name": "angular-test-clever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrushinEgor/angular-test-clever.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrushinEgor/angular-test-clever/issues"
+  },
+  "homepage": "https://github.com/GrushinEgor/angular-test-clever#readme"
+}
