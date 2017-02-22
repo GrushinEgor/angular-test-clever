@@ -5,7 +5,6 @@ const debug = process.env.NODE_ENV !== "production",
 
 const nodeExcludeRegExp = /(node_modules|bower_components)/;
 
-
 const context = path.join(__dirname, 'src');
 
 module.exports = {
@@ -23,9 +22,8 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
-                exclude: nodeExcludeRegExp
+                test: /\.s?css$/,
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })
             }
         ]
     },
