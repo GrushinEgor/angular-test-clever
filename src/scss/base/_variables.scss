@@ -1,0 +1,50 @@
+
+
+// Font Sizes
+$base-font-size: 16px;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+
+// Backgrounds
+//$site-background-color: #f7f7f7;
+$site-background-color: #fff;
+$page-background-color: #fff;
+$alt-background-color: #f7f7f7;
+
+
+$base-font-color: #484848;
+$divider-color: #d7d7d7;
+$accent-color: #fee133;
+$main-color: #5dcaaf;
+$fail-color: #D02E2E;
+$success-color: #3da56c;
+$neutral-color: #406FB3;
+
+// // Border
+$base-border-color: $divider-color;
+$base-border: 1px solid $base-border-color;
+
+// // Forms
+// $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+// $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+$base-box-shadow: #a9a9a9 0 1px 4px 0;
+
+
+$global-padding-left: 0px;
+$global-padding-right: 0px;
+
+$columns-padding-left: 0px;
+$columns-padding-right: 20px;
+
+
+$image-path: "../img/";	

@@ -1,0 +1,69 @@
+
+$fonts-url: "../fonts";
+ 
+$base-font: 'Roboto', sans-serif;
+$base-font-family:  $base-font;
+
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-font;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+  // font-size: $base-font-size;
+  // line-height: $heading-line-height;
+  // margin: 0 0 $small-spacing;
+}
+
+h1{
+  font-size: 24px;
+}
+h2{
+  font-size: 18px;
+
+}
+h3{
+  font-size: 16px;
+}
+
+h4{
+
+
+}
+p {
+  margin: 0;
+}
+
+a {
+  &, &:focus,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+b, strong{
+  font-family: $base-font;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+label{
+  font-weight: normal;
+}

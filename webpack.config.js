@@ -3,6 +3,10 @@ const debug = process.env.NODE_ENV !== "production",
     path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const bourbon = require('bourbon').includePaths,
+    neat = require('bourbon-neat').includePaths
+
+
 
 const nodeExcludeRegExp = /(node_modules|bower_components)/;
 
@@ -24,7 +28,17 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader!sass-loader'})
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader', use: [
+                        'css-loader',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                includePaths: [bourbon, neat]
+                            }
+                        }
+                    ]
+                })
             },
             {
                 test: /\.html$/,

@@ -1,3 +1,5 @@
+import './home.scss';
+
 import angular from 'angular';
 import {appName} from '../../constants';
 import uiRouter from 'angular-ui-router';

@@ -1,5 +1,5 @@
 import './externalStyles';
-import './scss/index.scss';
+import './scss';
 
 import app from './app';
 import routesConfig from './configs/routes.config';
