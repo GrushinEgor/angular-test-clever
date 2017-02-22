@@ -1,7 +1,9 @@
 const debug = process.env.NODE_ENV !== "production",
     webpack = require('webpack'),
-    path =  require('path');
+    path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const nodeExcludeRegExp = /(node_modules|bower_components)/;
 
 
 const context = path.join(__dirname, 'src');
@@ -9,23 +11,38 @@ const context = path.join(__dirname, 'src');
 module.exports = {
     context,
     devtool: debug ? "inline-sourcemap" : null,
-    entry: './app.js',
+    entry: [   
+        'webpack-dev-server/client?http://localhost:3000',
+        './app.js'
+    ],
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: nodeExcludeRegExp,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css-loader!sass-loader'),
+                exclude: nodeExcludeRegExp
             }
         ]
-    }, 
+    },
     output: {
-        path: context, 
+        path: context,
         filename: "app.min.js",
     },
-    plugins: debug ? [] : [
+    plugins: (debug ? [] : [
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.OccurenceOrderPlugin(),
             new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),
-        ],
+        ])
+        .concat([
+            new webpack.HotModuleReplacementPlugin(),
+            new ExtractTextPlugin({
+                filename: 'app.min.css',
+                allChunks: true
+            })
+        ]),
 };
