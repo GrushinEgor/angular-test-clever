@@ -34,7 +34,7 @@ module.exports = {
                         {
                             loader: 'sass-loader',
                             options: {
-                                includePaths: [bourbon, neat]
+                                includePaths: [bourbon, neat, path.resolve(__dirname, './src/scss')]
                             }
                         }
                     ]

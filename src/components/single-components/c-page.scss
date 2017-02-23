@@ -1,0 +1,11 @@
+@import 'neat';
+@import 'custom-mixins';
+@import "base/variables";
+
+.c-page {
+   @include e('wrapper') {
+       @include grid-container;
+       margin: auto;
+       max-width: $max-width;
+   }
+}

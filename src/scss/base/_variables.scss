@@ -47,4 +47,18 @@ $columns-padding-left: 0px;
 $columns-padding-right: 20px;
 
 
-$image-path: "../img/";	
+$image-path: "../img/";
+
+
+$neat-grid: (
+        columns: 12,
+        gutter: 20px,
+);
+
+$max-width: 1290px;
+$min-width: 320px;
+
+$xsmall-breakpoint-value: 480px;
+$small-breakpoint-value: 768px;
+$medium-breakpoint-value: 1024px;
+$large-breakpoint-value: 1290px;
